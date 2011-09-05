@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A8CFB011414E36B00BA03FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CFB001414E36B00BA03FC /* Cocoa.framework */; };
+		5A8CFB031414E36B00BA03FC /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CFB021414E36B00BA03FC /* MacRuby.framework */; };
+		5A8CFB0A1414E36B00BA03FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB081414E36B00BA03FC /* InfoPlist.strings */; };
+		5A8CFB0C1414E36B00BA03FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8CFB0B1414E36B00BA03FC /* main.m */; };
+		5A8CFB111414E36C00BA03FC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB0F1414E36C00BA03FC /* MainMenu.xib */; };
+		5A8CFB141414E36C00BA03FC /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB131414E36C00BA03FC /* rb_main.rb */; };
+		5A8CFB161414E36C00BA03FC /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB151414E36C00BA03FC /* AppDelegate.rb */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5A8CFAFC1414E36B00BA03FC /* MiteTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiteTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A8CFB001414E36B00BA03FC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		5A8CFB021414E36B00BA03FC /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
+		5A8CFB071414E36B00BA03FC /* MiteTime-Info.plist */ = {isa = PBXFileReference; path = "MiteTime-Info.plist"; sourceTree = "<group>"; };
+		5A8CFB091414E36B00BA03FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5A8CFB0B1414E36B00BA03FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A8CFB0D1414E36B00BA03FC /* MiteTime-Prefix.pch */ = {isa = PBXFileReference; path = "MiteTime-Prefix.pch"; sourceTree = "<group>"; };
+		5A8CFB101414E36C00BA03FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5A8CFB131414E36C00BA03FC /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
+		5A8CFB151414E36C00BA03FC /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A8CFAF91414E36B00BA03FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A8CFB011414E36B00BA03FC /* Cocoa.framework in Frameworks */,
+				5A8CFB031414E36B00BA03FC /* MacRuby.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A8CFAF11414E36B00BA03FC = {
+			isa = PBXGroup;
+			children = (
+				5A8CFB051414E36B00BA03FC /* MiteTime */,
+				5A8CFAFF1414E36B00BA03FC /* Frameworks */,
+				5A8CFAFD1414E36B00BA03FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A8CFAFD1414E36B00BA03FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A8CFAFC1414E36B00BA03FC /* MiteTime.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A8CFAFF1414E36B00BA03FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A8CFB001414E36B00BA03FC /* Cocoa.framework */,
+				5A8CFB021414E36B00BA03FC /* MacRuby.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A8CFB051414E36B00BA03FC /* MiteTime */ = {
+			isa = PBXGroup;
+			children = (
+				5A8CFB151414E36C00BA03FC /* AppDelegate.rb */,
+				5A8CFB0E1414E36C00BA03FC /* Resources */,
+				5A8CFB121414E36C00BA03FC /* Other Sources */,
+				5A8CFB061414E36B00BA03FC /* Supporting Files */,
+			);
+			path = MiteTime;
+			sourceTree = "<group>";
+		};
+		5A8CFB061414E36B00BA03FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A8CFB071414E36B00BA03FC /* MiteTime-Info.plist */,
+				5A8CFB081414E36B00BA03FC /* InfoPlist.strings */,
+				5A8CFB0B1414E36B00BA03FC /* main.m */,
+				5A8CFB0D1414E36B00BA03FC /* MiteTime-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A8CFB0E1414E36C00BA03FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5A8CFB0F1414E36C00BA03FC /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5A8CFB121414E36C00BA03FC /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5A8CFB131414E36C00BA03FC /* rb_main.rb */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		5A8CFB041414E36B00BA03FC /* Deployment */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "--compile --embed";
+			buildConfigurationList = 5A8CFB1C1414E36C00BA03FC /* Build configuration list for PBXLegacyTarget "Deployment" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/macruby_deploy;
+			dependencies = (
+			);
+			name = Deployment;
+			passBuildSettingsInEnvironment = 1;
+			productName = Deployment;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		5A8CFAFB1414E36B00BA03FC /* MiteTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A8CFB191414E36C00BA03FC /* Build configuration list for PBXNativeTarget "MiteTime" */;
+			buildPhases = (
+				5A8CFAF81414E36B00BA03FC /* Sources */,
+				5A8CFAF91414E36B00BA03FC /* Frameworks */,
+				5A8CFAFA1414E36B00BA03FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiteTime;
+			productName = MiteTime;
+			productReference = 5A8CFAFC1414E36B00BA03FC /* MiteTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A8CFAF31414E36B00BA03FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "abstracture GmbH & Co. KG";
+			};
+			buildConfigurationList = 5A8CFAF61414E36B00BA03FC /* Build configuration list for PBXProject "MiteTime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5A8CFAF11414E36B00BA03FC;
+			productRefGroup = 5A8CFAFD1414E36B00BA03FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A8CFAFB1414E36B00BA03FC /* MiteTime */,
+				5A8CFB041414E36B00BA03FC /* Deployment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A8CFAFA1414E36B00BA03FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A8CFB0A1414E36B00BA03FC /* InfoPlist.strings in Resources */,
+				5A8CFB111414E36C00BA03FC /* MainMenu.xib in Resources */,
+				5A8CFB141414E36C00BA03FC /* rb_main.rb in Resources */,
+				5A8CFB161414E36C00BA03FC /* AppDelegate.rb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A8CFAF81414E36B00BA03FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A8CFB0C1414E36B00BA03FC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5A8CFB081414E36B00BA03FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A8CFB091414E36B00BA03FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5A8CFB0F1414E36C00BA03FC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A8CFB101414E36C00BA03FC /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A8CFB171414E36C00BA03FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5A8CFB181414E36C00BA03FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5A8CFB1A1414E36C00BA03FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MiteTime/MiteTime-Prefix.pch";
+				INFOPLIST_FILE = "MiteTime/MiteTime-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5A8CFB1B1414E36C00BA03FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MiteTime/MiteTime-Prefix.pch";
+				INFOPLIST_FILE = "MiteTime/MiteTime-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5A8CFB1D1414E36C00BA03FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		5A8CFB1E1414E36C00BA03FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A8CFAF61414E36B00BA03FC /* Build configuration list for PBXProject "MiteTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A8CFB171414E36C00BA03FC /* Debug */,
+				5A8CFB181414E36C00BA03FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A8CFB191414E36C00BA03FC /* Build configuration list for PBXNativeTarget "MiteTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A8CFB1A1414E36C00BA03FC /* Debug */,
+				5A8CFB1B1414E36C00BA03FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5A8CFB1C1414E36C00BA03FC /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A8CFB1D1414E36C00BA03FC /* Debug */,
+				5A8CFB1E1414E36C00BA03FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A8CFAF31414E36B00BA03FC /* Project object */;
+}
