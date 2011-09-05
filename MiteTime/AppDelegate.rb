@@ -11,5 +11,10 @@ class AppDelegate
   def applicationDidFinishLaunching(a_notification)
     # Insert code here to initialize your application
   end
+  
+  
+  def windowWillClose(notification)
+    exit
+  end
 end
 
