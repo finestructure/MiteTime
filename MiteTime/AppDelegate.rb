@@ -14,11 +14,17 @@ CONFIG_FILE = File.expand_path '~/.mite.yml'
 class AppDelegate
   attr_accessor :window
   attr_accessor :table_view
-  attr_accessor :users
+  attr_accessor :data
   
   
   def applicationDidFinishLaunching(a_notification)
-    @users = []
+    @data = []
+  end
+  
+  
+  def load_time_entries
+    sas = Mite::User.all(:params => {:name => 'Sven A. Schmidt'})[0]
+    return sas.time_entries.find_all {|t| t.project_name == "Capm2"}
   end
   
   
@@ -32,24 +38,29 @@ class AppDelegate
       raise Exception.new("Configuration file is missing.")
     end
 
-    @users = Mite::User.all
+    #@users = Mite::User.all
+    @data = load_time_entries
+    
     table_view.reloadData
   end
   
   
   def numberOfRowsInTableView(tableView)
-    if users.nil?
-      @users = []
+    if data.nil?
+      @data = []
     end
-    return users.size
+    return data.size
   end
 
   
   def tableView(tableView, objectValueForTableColumn:column, row:rowIndex)
-    if column.identifier == "Name"
-      return users[rowIndex].name
-    elsif column.identifier == "Email"
-      return users[rowIndex].email
+    case column.identifier
+    when "Date"
+      return data[rowIndex].date_at
+    when "Project"
+      return data[rowIndex].project_name
+    when "Duration"
+      return "%.2f" % (data[rowIndex].minutes / 60.0)
     end
   end
   
