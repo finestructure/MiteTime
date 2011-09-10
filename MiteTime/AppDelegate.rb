@@ -41,26 +41,26 @@ class AppDelegate
     #@users = Mite::User.all
     @data = load_time_entries
     
-    table_view.reloadData
+    @table_view.reloadData
   end
   
   
   def numberOfRowsInTableView(tableView)
-    if data.nil?
+    if @data.nil?
       @data = []
     end
-    return data.size
+    return @data.size
   end
 
   
   def tableView(tableView, objectValueForTableColumn:column, row:rowIndex)
     case column.identifier
     when "Date"
-      return data[rowIndex].date_at
+      return @data[rowIndex].date_at
     when "Project"
-      return data[rowIndex].project_name
+      return @data[rowIndex].project_name
     when "Duration"
-      return "%.2f" % (data[rowIndex].minutes / 60.0)
+      return "%.2f" % (@data[rowIndex].minutes / 60.0)
     end
   end
   
