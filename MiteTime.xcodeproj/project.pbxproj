@@ -14,6 +14,7 @@
 		5A8CFB111414E36C00BA03FC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB0F1414E36C00BA03FC /* MainMenu.xib */; };
 		5A8CFB141414E36C00BA03FC /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB131414E36C00BA03FC /* rb_main.rb */; };
 		5A8CFB161414E36C00BA03FC /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB151414E36C00BA03FC /* AppDelegate.rb */; };
+		5AF7F70C141CE7880057D400 /* mymite.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5AF7F70B141CE7880057D400 /* mymite.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		5A8CFB101414E36C00BA03FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5A8CFB131414E36C00BA03FC /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		5A8CFB151414E36C00BA03FC /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		5AF7F70B141CE7880057D400 /* mymite.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = mymite.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		5A8CFB051414E36B00BA03FC /* MiteTime */ = {
 			isa = PBXGroup;
 			children = (
+				5AF7F70B141CE7880057D400 /* mymite.rb */,
 				5A8CFB151414E36C00BA03FC /* AppDelegate.rb */,
 				5A8CFB0E1414E36C00BA03FC /* Resources */,
 				5A8CFB121414E36C00BA03FC /* Other Sources */,
@@ -178,6 +181,7 @@
 				5A8CFB111414E36C00BA03FC /* MainMenu.xib in Resources */,
 				5A8CFB141414E36C00BA03FC /* rb_main.rb in Resources */,
 				5A8CFB161414E36C00BA03FC /* AppDelegate.rb in Resources */,
+				5AF7F70C141CE7880057D400 /* mymite.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +328,7 @@
 				5A8CFB1B1414E36C00BA03FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A8CFB1C1414E36C00BA03FC /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
 			isa = XCConfigurationList;
@@ -332,6 +337,7 @@
 				5A8CFB1E1414E36C00BA03FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

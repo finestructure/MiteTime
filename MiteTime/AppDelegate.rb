@@ -7,9 +7,8 @@
 #
 
 require 'rubygems'
-require 'mite-rb'
+require 'mymite'
 
-CONFIG_FILE = File.expand_path '~/.mite.yml'
 
 class AppDelegate
   attr_accessor :window
@@ -22,25 +21,9 @@ class AppDelegate
   end
   
   
-  def load_time_entries
-    sas = Mite::User.all(:params => {:name => 'Sven A. Schmidt'})[0]
-    return sas.time_entries.find_all {|t| t.project_name == "Capm2"}
-  end
-  
-  
   def button_pressed(sender)
-    puts "pressed"
-    if File.exist?(CONFIG_FILE)
-      configuration = YAML.load(File.read(CONFIG_FILE))
-      Mite.account = configuration[:account]
-      Mite.key = configuration[:apikey]
-    else
-      raise Exception.new("Configuration file is missing.")
-    end
-
-    #@users = Mite::User.all
-    @data = load_time_entries
-    
+    puts "loading"
+    @data = get_report('Capm2', 5)    
     @table_view.reloadData
   end
   
@@ -55,12 +38,14 @@ class AppDelegate
   
   def tableView(tableView, objectValueForTableColumn:column, row:rowIndex)
     case column.identifier
-    when "Date"
-      return @data[rowIndex].date_at
-    when "Project"
-      return @data[rowIndex].project_name
-    when "Duration"
-      return "%.2f" % (@data[rowIndex].minutes / 60.0)
+    when "Month"
+      return @data[rowIndex][0]
+    when "Name"
+      return @data[rowIndex][1]
+    when "Hours"
+      return @data[rowIndex][2]
+    when "Days"
+      return @data[rowIndex][3]
     end
   end
   
