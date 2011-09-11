@@ -13,6 +13,8 @@ require 'mymite'
 class AppDelegate
   attr_accessor :window
   attr_accessor :table_view
+  attr_accessor :progress_indicator
+  attr_accessor :refresh_button
   attr_accessor :data
   
   
@@ -24,8 +26,15 @@ class AppDelegate
   def load_data
     Thread.new do
       puts "loading"
+      # ui updates
+      @progress_indicator.startAnimation(self)
+      @refresh_button.enabled = false
+      # fetch data
       @data = get_report('Capm2', 5)    
+      # ui updates
       @table_view.reloadData
+      @progress_indicator.stopAnimation(self)
+      @refresh_button.enabled = true
     end
   end  
   
