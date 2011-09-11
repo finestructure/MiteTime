@@ -17,14 +17,19 @@ class AppDelegate
   
   
   def applicationDidFinishLaunching(a_notification)
-    @data = []
+    load_data
   end
   
   
-  def button_pressed(sender)
+  def load_data
     puts "loading"
     @data = get_report('Capm2', 5)    
     @table_view.reloadData
+  end  
+  
+
+  def button_pressed(sender)
+    load_data
   end
   
   
@@ -43,9 +48,9 @@ class AppDelegate
     when "Name"
       return @data[rowIndex][1]
     when "Hours"
-      return @data[rowIndex][2]
+      return "%.2f" % @data[rowIndex][2]
     when "Days"
-      return @data[rowIndex][3]
+      return "%.1f" % @data[rowIndex][3]
     end
   end
   
