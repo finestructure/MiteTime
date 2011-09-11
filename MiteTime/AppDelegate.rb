@@ -22,9 +22,11 @@ class AppDelegate
   
   
   def load_data
-    puts "loading"
-    @data = get_report('Capm2', 5)    
-    @table_view.reloadData
+    Thread.new do
+      puts "loading"
+      @data = get_report('Capm2', 5)    
+      @table_view.reloadData
+    end
   end  
   
 
