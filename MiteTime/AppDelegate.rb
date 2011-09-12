@@ -17,11 +17,12 @@ class AppDelegate
   attr_accessor :refresh_button
   attr_accessor :project_popup
   attr_accessor :root
+  attr_accessor :queue
   
   
   def initialize
     @root = OutlineItem.new
-    Thread.abort_on_exception = true
+    @queue = Dispatch::Queue.new('de.abstracture.MiteTime')
   end
 
   
@@ -30,8 +31,8 @@ class AppDelegate
   end
   
   
-  def load_data
-    Thread.new do
+  def load_data(fetch_projects=true)
+    @queue.async do
       puts "loading"
       # ui updates
       @project_popup.enabled = false
@@ -39,10 +40,12 @@ class AppDelegate
       @refresh_button.enabled = false
       @progress_indicator.hidden = false
 
-      # populate project popup
-      @project_popup.removeAllItems
-      @project_popup.addItemsWithTitles(get_projects)
-      @project_popup.selectItemWithTitle("Capm2")
+      if fetch_projects
+        # populate project popup
+        @project_popup.removeAllItems
+        @project_popup.addItemsWithTitles(get_projects)
+        @project_popup.selectItemWithTitle("Capm2")
+      end
 
       # fetch data
       project = @project_popup.titleOfSelectedItem
@@ -68,29 +71,7 @@ class AppDelegate
     # clear outline view
     @root = OutlineItem.new
     @outline_view.reloadData
-    
-    # needs to be refactored but there's a problem with
-    # thread safety on net/http
-    Thread.new do
-      puts "loading"
-      # ui updates
-      @project_popup.enabled = false
-      @progress_indicator.startAnimation(self)
-      @refresh_button.enabled = false
-      @progress_indicator.hidden = false
-
-      # fetch data
-      project = @project_popup.titleOfSelectedItem
-      @root = get_outline_data(project, 6)
-
-      # ui updates
-      @project_popup.enabled = true
-      @outline_view.reloadData
-      @progress_indicator.stopAnimation(self)
-      @refresh_button.enabled = true
-      @progress_indicator.hidden = true
-      @root.children.each{|child| @outline_view.expandItem(child)}
-    end    
+    load_data(fetch_projects=false)    
   end
   
   
