@@ -40,6 +40,7 @@ class AppDelegate
       @outline_view.reloadData
       @progress_indicator.stopAnimation(self)
       @refresh_button.enabled = true
+      @root.children.each{|child| @outline_view.expandItem(child)}
     end
   end  
   
