@@ -127,7 +127,7 @@ class OutlineItem
   end
   
   def is_expandable
-    return size > 1
+    return size > 0
   end
 end
 
@@ -164,6 +164,6 @@ if __FILE__ == $0
 #    puts from.strftime('%B')
 #    print_report(mite, project_id, from, to)
 #  end
-#  p get_report("Capm2", 3)
+#  get_report("Capm2", 4).each{|i| p i}
   get_outline_data("Capm2", 3)
 end
