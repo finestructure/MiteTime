@@ -100,7 +100,13 @@ end
 
 def get_report(project_name, monthsback=1)
   mite = Mite.new
-  project_id = mite.projects("name=#{project_name}")[0]['project']['id']
+  project_map = {}
+  mite.projects.each do |proj|
+    name = proj['project']['name']
+    id = proj['project']['id']
+    project_map[name] = id
+  end
+  project_id = project_map[project_name]
   res = []
   get_date_pair(monthsback) do |from, to|
     month = from.strftime('%B')
