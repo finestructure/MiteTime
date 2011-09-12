@@ -34,12 +34,14 @@ class AppDelegate
       # ui updates
       @progress_indicator.startAnimation(self)
       @refresh_button.enabled = false
+      @progress_indicator.hidden = false
       # fetch data
       @root = get_outline_data('Capm2', 5)
       # ui updates
       @outline_view.reloadData
       @progress_indicator.stopAnimation(self)
       @refresh_button.enabled = true
+      @progress_indicator.hidden = true
       @root.children.each{|child| @outline_view.expandItem(child)}
     end
   end  
