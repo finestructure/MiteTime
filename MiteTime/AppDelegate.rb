@@ -46,7 +46,7 @@ class AppDelegate
 
       # fetch data
       project = @project_popup.titleOfSelectedItem
-      @root = get_outline_data(project, 12)
+      @root = get_outline_data(project, 6)
 
       # ui updates
       @project_popup.enabled = true
@@ -81,7 +81,7 @@ class AppDelegate
 
       # fetch data
       project = @project_popup.titleOfSelectedItem
-      @root = get_outline_data(project, 12)
+      @root = get_outline_data(project, 6)
 
       # ui updates
       @project_popup.enabled = true
