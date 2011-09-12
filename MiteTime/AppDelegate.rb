@@ -74,15 +74,24 @@ class AppDelegate
   end
   
   
+  def format_value(fmt, value)
+    if value != ''
+      return fmt % value
+    else
+      return value
+    end
+  end
+  
+  
   def outlineView(outlineView, objectValueForTableColumn:column, byItem:item)
     item = @root if item == nil
     case column.identifier
     when "Name"
       return item.columns[0]
     when "Hours"
-      return item.columns[1]
+      return format_value("%.2f", item.columns[1])
     when "Days"
-      return item.columns[2]
+      return format_value("%.1f", item.columns[2])
     end
   end
   
