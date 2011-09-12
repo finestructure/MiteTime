@@ -21,6 +21,7 @@ class AppDelegate
   
   def initialize
     @root = OutlineItem.new
+    Thread.abort_on_exception = true
   end
 
   
@@ -60,6 +61,36 @@ class AppDelegate
 
   def button_pressed(sender)
     load_data
+  end
+  
+  
+  def project_selected(sender)
+    # clear outline view
+    @root = OutlineItem.new
+    @outline_view.reloadData
+    
+    # needs to be refactored but there's a problem with
+    # thread safety on net/http
+    Thread.new do
+      puts "loading"
+      # ui updates
+      @project_popup.enabled = false
+      @progress_indicator.startAnimation(self)
+      @refresh_button.enabled = false
+      @progress_indicator.hidden = false
+
+      # fetch data
+      project = @project_popup.titleOfSelectedItem
+      @root = get_outline_data(project, 12)
+
+      # ui updates
+      @project_popup.enabled = true
+      @outline_view.reloadData
+      @progress_indicator.stopAnimation(self)
+      @refresh_button.enabled = true
+      @progress_indicator.hidden = true
+      @root.children.each{|child| @outline_view.expandItem(child)}
+    end    
   end
   
   
