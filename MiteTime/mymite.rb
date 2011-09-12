@@ -113,12 +113,57 @@ def get_report(project_name, monthsback=1)
 end
 
 
-if __FILE__ == $0
-  mite = Mite.new
-  project_id = mite.projects("name=Capm2")[0]['project']['id']
-  get_date_pair(2) do |from, to|
-    puts from.strftime('%B')
-    print_report(mite, project_id, from, to)
+class OutlineItem
+  attr_accessor :children
+  attr_accessor :columns
+  
+  def initialize
+    @children = []
+    @columns = ['', '', '']
   end
-  p get_report("Capm2", 3)
+  
+  def size
+    return @children.size
+  end
+  
+  def is_expandable
+    return size > 1
+  end
+end
+
+
+def get_outline_data(project_name, monthsback=1)
+  raw_data = get_report(project_name, monthsback)
+
+  months = Hash.new{|h, k| h[k] = []}
+  raw_data.each do |row|
+    month = row[0]
+    months[month] << row
+  end
+
+  root = OutlineItem.new
+  months.each do |month, rows|
+    child1 = OutlineItem.new
+    child1.columns = [month, '', '']
+    root.children << child1
+    rows.each do |row|
+      child2 = OutlineItem.new
+      child2.columns = row[1..-1]
+      child1.children << child2
+    end
+  end
+  
+  return root
+end
+
+
+if __FILE__ == $0
+#  mite = Mite.new
+#  project_id = mite.projects("name=Capm2")[0]['project']['id']
+#  get_date_pair(2) do |from, to|
+#    puts from.strftime('%B')
+#    print_report(mite, project_id, from, to)
+#  end
+#  p get_report("Capm2", 3)
+  get_outline_data("Capm2", 3)
 end

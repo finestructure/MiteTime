@@ -12,11 +12,16 @@ require 'mymite'
 
 class AppDelegate
   attr_accessor :window
-  attr_accessor :table_view
+  attr_accessor :outline_view
   attr_accessor :progress_indicator
   attr_accessor :refresh_button
-  attr_accessor :data
+  attr_accessor :root
   
+  
+  def initialize
+    @root = OutlineItem.new
+  end
+
   
   def applicationDidFinishLaunching(a_notification)
     load_data
@@ -30,9 +35,9 @@ class AppDelegate
       @progress_indicator.startAnimation(self)
       @refresh_button.enabled = false
       # fetch data
-      @data = get_report('Capm2', 5)    
+      @root = get_outline_data('Capm2', 5)
       # ui updates
-      @table_view.reloadData
+      @outline_view.reloadData
       @progress_indicator.stopAnimation(self)
       @refresh_button.enabled = true
     end
@@ -44,29 +49,42 @@ class AppDelegate
   end
   
   
-  def numberOfRowsInTableView(tableView)
-    if @data.nil?
-      @data = []
-    end
-    return @data.size
-  end
-
-  
-  def tableView(tableView, objectValueForTableColumn:column, row:rowIndex)
-    case column.identifier
-    when "Month"
-      return @data[rowIndex][0]
-    when "Name"
-      return @data[rowIndex][1]
-    when "Hours"
-      return "%.2f" % @data[rowIndex][2]
-    when "Days"
-      return "%.1f" % @data[rowIndex][3]
-    end
-  end
-  
   def windowWillClose(notification)
     exit
   end
+
+
+  # outline view data source protocol
+  
+  def outlineView(outlineView, numberOfChildrenOfItem:item)
+    item = @root if item == nil
+    return item.size
+  end
+  
+  
+  def outlineView(outlineView, isItemExpandable:item)
+    item = @root if item == nil
+    return item.is_expandable    
+  end
+
+  
+  def outlineView(outlineView, child:index, ofItem:item)
+    item = @root if item == nil
+    return item.children[index]
+  end
+  
+  
+  def outlineView(outlineView, objectValueForTableColumn:column, byItem:item)
+    item = @root if item == nil
+    case column.identifier
+    when "Name"
+      return item.columns[0]
+    when "Hours"
+      return item.columns[1]
+    when "Days"
+      return item.columns[2]
+    end
+  end
+  
 end
 
