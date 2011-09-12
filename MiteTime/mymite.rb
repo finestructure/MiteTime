@@ -172,13 +172,13 @@ end
 
 
 if __FILE__ == $0
-#  mite = Mite.new
-#  project_id = mite.projects("name=Capm2")[0]['project']['id']
-#  get_date_pair(2) do |from, to|
-#    puts from.strftime('%B')
-#    print_report(mite, project_id, from, to)
-#  end
+  mite = Mite.new
+  project_id = mite.projects("name=Capm2")[0]['project']['id']
+  get_date_pair(2) do |from, to|
+    puts from.strftime('%B')
+    print_report(mite, project_id, from, to)
+  end
 #  get_report("Capm2", 4).each{|i| p i}
 #  get_outline_data("Capm2", 3)
-  p get_projects
+#  p get_projects
 end
