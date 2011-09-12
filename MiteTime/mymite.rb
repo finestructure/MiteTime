@@ -157,6 +157,14 @@ def get_outline_data(project_name, monthsback=1)
 end
 
 
+def get_projects
+  mite = Mite.new
+  projects = []
+  mite.projects.each{|proj| projects << proj['project']['name']}
+  return projects
+end
+
+
 if __FILE__ == $0
 #  mite = Mite.new
 #  project_id = mite.projects("name=Capm2")[0]['project']['id']
@@ -165,5 +173,6 @@ if __FILE__ == $0
 #    print_report(mite, project_id, from, to)
 #  end
 #  get_report("Capm2", 4).each{|i| p i}
-  get_outline_data("Capm2", 3)
+#  get_outline_data("Capm2", 3)
+  p get_projects
 end

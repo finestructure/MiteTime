@@ -15,6 +15,7 @@ class AppDelegate
   attr_accessor :outline_view
   attr_accessor :progress_indicator
   attr_accessor :refresh_button
+  attr_accessor :project_popup
   attr_accessor :root
   
   
@@ -32,12 +33,22 @@ class AppDelegate
     Thread.new do
       puts "loading"
       # ui updates
+      @project_popup.enabled = false
       @progress_indicator.startAnimation(self)
       @refresh_button.enabled = false
       @progress_indicator.hidden = false
+
+      # populate project popup
+      @project_popup.removeAllItems
+      @project_popup.addItemsWithTitles(get_projects)
+      @project_popup.selectItemWithTitle("Capm2")
+
       # fetch data
-      @root = get_outline_data('Capm2', 5)
+      project = @project_popup.titleOfSelectedItem
+      @root = get_outline_data(project, 12)
+
       # ui updates
+      @project_popup.enabled = true
       @outline_view.reloadData
       @progress_indicator.stopAnimation(self)
       @refresh_button.enabled = true
