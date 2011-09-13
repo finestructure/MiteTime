@@ -49,15 +49,19 @@ class AppDelegate
 
       # fetch data
       project = @project_popup.titleOfSelectedItem
-      @root = get_outline_data(project, 6)
+      get_outline_data(project, 6) do |data|
+        @root = data
+        Dispatch::Queue.main.async do
+          @outline_view.reloadData
+          @root.children.each{|child| @outline_view.expandItem(child)}
+        end
+      end
 
       # ui updates
       @project_popup.enabled = true
-      @outline_view.reloadData
       @progress_indicator.stopAnimation(self)
       @refresh_button.enabled = true
       @progress_indicator.hidden = true
-      @root.children.each{|child| @outline_view.expandItem(child)}
     end
   end  
   
