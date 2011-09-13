@@ -44,7 +44,13 @@ class AppDelegate
         # populate project popup
         @project_popup.removeAllItems
         @project_popup.addItemsWithTitles(get_projects)
-        @project_popup.selectItemWithTitle("Capm2")
+        defaults = NSUserDefaults.standardUserDefaults
+        selected_project = defaults.stringForKey("SelectedProject")
+        if @project_popup.itemTitles.include?(selected_project)
+          @project_popup.selectItemWithTitle(selected_project)
+        else
+          @project_popup.selectItemAtIndex(0)
+        end
       end
 
       # fetch data
@@ -76,6 +82,9 @@ class AppDelegate
     @root = OutlineItem.new
     @outline_view.reloadData
     load_data(fetch_projects=false)    
+    defaults = NSUserDefaults.standardUserDefaults
+    project = @project_popup.titleOfSelectedItem
+    defaults.setObject(project, forKey:"SelectedProject")
   end
   
   
