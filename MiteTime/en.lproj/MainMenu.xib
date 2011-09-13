@@ -1334,6 +1334,7 @@
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
+				<string key="NSWindowContentMinSize">{450, 200}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -1418,7 +1419,7 @@
 												<bool key="EncodedWithXMLCoder">YES</bool>
 												<object class="NSTableColumn" id="636775474">
 													<string key="NSIdentifier">Name</string>
-													<double key="NSWidth">101</double>
+													<double key="NSWidth">213</double>
 													<double key="NSMinWidth">16</double>
 													<double key="NSMaxWidth">1000</double>
 													<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1725,6 +1726,7 @@
 					<reference key="NSNextKeyView" ref="680487576"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
+				<string key="NSMinSize">{450, 222}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -4120,12 +4122,14 @@
 							<string>outline_view</string>
 							<string>progress_indicator</string>
 							<string>project_popup</string>
+							<string>queue</string>
 							<string>refresh_button</string>
 							<string>root</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4141,6 +4145,7 @@
 							<string>outline_view</string>
 							<string>progress_indicator</string>
 							<string>project_popup</string>
+							<string>queue</string>
 							<string>refresh_button</string>
 							<string>root</string>
 							<string>window</string>
@@ -4157,6 +4162,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">project_popup</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">queue</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBToOneOutletInfo">
