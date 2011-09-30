@@ -14,6 +14,7 @@
 		5A8CFB111414E36C00BA03FC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB0F1414E36C00BA03FC /* MainMenu.xib */; };
 		5A8CFB141414E36C00BA03FC /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB131414E36C00BA03FC /* rb_main.rb */; };
 		5A8CFB161414E36C00BA03FC /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CFB151414E36C00BA03FC /* AppDelegate.rb */; };
+		5AEC2AE9143595240022D4BD /* mt-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5AEC2AE8143595240022D4BD /* mt-icon.icns */; };
 		5AF7F70C141CE7880057D400 /* mymite.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5AF7F70B141CE7880057D400 /* mymite.rb */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		5A8CFB101414E36C00BA03FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5A8CFB131414E36C00BA03FC /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		5A8CFB151414E36C00BA03FC /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		5AEC2AE8143595240022D4BD /* mt-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "mt-icon.icns"; sourceTree = "<group>"; };
 		5AF7F70B141CE7880057D400 /* mymite.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = mymite.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 		5A8CFB0E1414E36C00BA03FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5AEC2AE8143595240022D4BD /* mt-icon.icns */,
 				5A8CFB0F1414E36C00BA03FC /* MainMenu.xib */,
 			);
 			name = Resources;
@@ -182,6 +185,7 @@
 				5A8CFB141414E36C00BA03FC /* rb_main.rb in Resources */,
 				5A8CFB161414E36C00BA03FC /* AppDelegate.rb in Resources */,
 				5AF7F70C141CE7880057D400 /* mymite.rb in Resources */,
+				5AEC2AE9143595240022D4BD /* mt-icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
