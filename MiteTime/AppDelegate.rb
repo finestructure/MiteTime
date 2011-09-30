@@ -130,7 +130,7 @@ class AppDelegate
     when "Hours"
       return format_value("%.2f", item.columns[1])
     when "Days"
-      return format_value("%.1f", item.columns[2])
+      return format_value("%.2f", item.columns[2])
     end
   end
   
